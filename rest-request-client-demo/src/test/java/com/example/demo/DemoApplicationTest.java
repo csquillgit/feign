@@ -12,15 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTest {
-	
+
 	@Autowired
 	private AccountFacade accountFacade;
-	
+
 	@Test
 	public void findAccounts() {
 		List<Account> accounts;
@@ -31,10 +29,10 @@ public class DemoApplicationTest {
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void findAccount() {
-		
+
 		try {
 			Account account = accountFacade.find(1L);
 			assertTrue(account.getId() == 1);
@@ -42,10 +40,10 @@ public class DemoApplicationTest {
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void updateAccount() {
-		
+
 		try {
 			Account account = new Account();
 			account.setId(1L);
@@ -58,27 +56,27 @@ public class DemoApplicationTest {
 			fail();
 		}
 	}
-	
+
 	@Test
-	public void nullPointerException() {
-		
+	public void throwNullPointerException() {
+
 		try {
 			accountFacade.nullPointer();
 			fail();
 		} catch (FacadeException e) {
 			assertEquals(e.getException(), "java.lang.NullPointerException");
 		}
-		
+
 	}
-	
+
 	@Test
-	public void facadeException() {
+	public void throwFacadeException() {
 		try {
 			accountFacade.facadeException();
 			fail();
 		} catch (FacadeException e) {
 			assertEquals(e.getMessage(), "Couldn't do something");
-		} 
+		}
 	}
 
 }
