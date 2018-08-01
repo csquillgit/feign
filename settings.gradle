@@ -1,3 +1,3 @@
-rootProject.name='microservices'
+rootProject.name='feign'
 include 'rest-request-client-demo'
 include 'rest-request-server-demo'
