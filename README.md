@@ -1,10 +1,10 @@
-# Microservices 
+# Feign Demo
 
 A demo of using Feign for RESTful calls and exposing the API with Swagger.
 
 ## Getting Started
 
-Microservices Demo contains 2 projects
+Feign Demo contains 2 projects
 
 1. rest-request-client-demo (frontend) 
 2. rest-request-server-demo (backend)
